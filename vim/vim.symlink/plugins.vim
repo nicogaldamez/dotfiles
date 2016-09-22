@@ -14,6 +14,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-bundler'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'skalnik/vim-vroom'
 
 " Plugin 'thoughtbot/vim-rspec'
 

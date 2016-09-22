@@ -36,7 +36,9 @@ plugins=(git bundler brew git-flow fasd ruby rails rake)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/local/php5/bin::/Users/nicogaldamez/code/_libs/android-sdk/platforms:/Users/nicogaldamez/code/_libs/android-sdk/tools:/usr/local/var/rbenv/shims:/Users/nicogaldamez/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/npm/bin"
+# export PATH="/usr/local/bin:/usr/local/php5/bin::/Users/nicogaldamez/code/_libs/android-sdk/platforms:/Users/nicogaldamez/code/_libs/android-sdk/tools:/usr/local/var/rbenv/shims:/Users/nicogaldamez/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/npm/bin"
+export PATH="/usr/local/bin:/usr/local/php5/bin::/Users/nicogaldamez/code/_libs/android-sdk/platforms:/Users/nicogaldamez/code/_libs/android-sdk/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/npm/bin"
+PATH="$HOME/.rbenv/shims:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # add /usr/local/sbin

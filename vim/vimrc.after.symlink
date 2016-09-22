@@ -1,8 +1,5 @@
 set guioptions-=T
 
-" colorscheme wombat
-" color codeschool
-" set guifont=Monaco:h12
 let g:NERDTreeWinPos = "right"
 set guioptions-=T " Removes top toolbar
 set guioptions-=r " Removes right hand scroll bar
@@ -10,6 +7,8 @@ set go-=L " Removes left hand scroll bar
 autocmd User Rails let b:surround_{char2nr('-')} = "<% \r %>" " displays <% %> correctly
 
 set wildmenu
+
+set mouse=a
 
 "au InsertEnter * call InsertStatuslineColor(v:insertmode)
 au InsertLeave * hi statusline guibg=green
@@ -30,7 +29,7 @@ nnoremap <silent> <leader>T :ClearCtrlPCache<cr>\|:CtrlP<cr>
 " highlight conflicts
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
-
+set relativenumber
 
 " ========================================================================
 " " Ruby stuff
@@ -38,6 +37,7 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 "syntax on                 " Enable syntax highlighting
 
+" set tags=./tags;
 
 augroup myfiletypes
   " Clear old autocmds in group
@@ -78,6 +78,9 @@ map <Leader>sc :sp db/schema.rb<cr>
 " shortcut to save
 nmap <leader>, :w<cr>
 
+" shortcut to quit
+nmap <leader>q :q<cr>
+
 " edit ~/.vimrc
 map <leader>ev :e! ~/.vimrc<cr>
 " " edit vim plugins
@@ -89,11 +92,19 @@ vmap <leader>] >gv
 nmap <leader>[ <<
 nmap <leader>] >>
 
+" Paste mode
+vmap <leader>p :set paste
+vmap <leader>np :set nopaste
+
 map <silent> <C-h> :call WinMove('h')<cr>
 map <silent> <C-j> :call WinMove('j')<cr>
 map <silent> <C-k> :call WinMove('k')<cr>
 map <silent> <C-l> :call WinMove('l')<cr>
 
+
+map <silent> <Leader>r :VroomRunTestFile<cr>
+map <silent> <Leader>R :VroomRunNearestTest<cr>
+map <silent> <Leader>l :VroomRunLastTest<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Functions
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -130,12 +141,14 @@ function! RenameFile()
       redraw!
     endif
 endfunction
-map <Leader>n :call RenameFile()<cr>
+map <Leader>m :call RenameFile()<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NERDTree closed by default
+let g:NERDTreeHijackNetrw=0
 " close NERDTree after a file is opened
 let g:NERDTreeQuitOnOpen=1
 " show hidden files in NERDTree

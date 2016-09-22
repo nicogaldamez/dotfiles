@@ -66,6 +66,9 @@ alias -g T='| tail'
 alias -g G='| grep'
 alias -g L="| less"
 
+# Ctags
+alias ctags="`brew --prefix`/bin/ctags"
+
 # Dir aliases
 alias galtec='cd ~/code/Galtec/galtec'
 alias ojos='cd ~/code/ojos_app'

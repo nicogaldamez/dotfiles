@@ -8,6 +8,7 @@
 
 # ignore directories
 --ignore-dir=node_modules
+--ignore-dir=log
 
 # added file types
 --type-set=css=.css,.less,.scss,.styl
