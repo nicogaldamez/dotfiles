@@ -80,7 +80,7 @@ defaults write com.apple.finder ShowStatusBar -bool true
 # defaults write com.apple.dock show-process-indicators -bool true
 
 # Don’t animate opening applications from the Dock
-# defaults write com.apple.dock launchanim -bool false
+defaults write com.apple.dock launchanim -bool false
 
 #echo "Display ASCII control characters using caret notation in standard text views"
 # Try e.g. `cd /tmp; unidecode "\x{0000}" > cc.txt; open -e cc.txt`
@@ -121,7 +121,7 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 15
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 # echo "Disable the warning when changing a file extension"
-# defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
 # echo "Show item info below desktop icons"
 # /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:showItemInfo true" ~/Library/Preferences/com.apple.finder.plist

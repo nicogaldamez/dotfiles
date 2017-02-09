@@ -46,6 +46,8 @@ if [[ -d /usr/local/sbin ]]; then
   export PATH=/usr/local/sbin:$PATH
 fi
 
+# source ~/.bin/tmuxinator.zsh
+
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment

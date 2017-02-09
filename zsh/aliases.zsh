@@ -8,6 +8,25 @@ else # OS X `ls`
     colorflag="-G"
 fi
 
+# Git
+alias glod='git pull origin develop'
+alias gpod='git push origin develop'
+alias glom='git pull origin master'
+alias gpom='git push origin master'
+
+# Git flow
+alias gffs='git flow feature start'
+alias gfff='git flow feature finish'
+alias gfrs='git flow release start'
+alias gfrf='git flow release finish'
+
+# Tmux
+alias tms='tmuxinator start'
+alias tma='tmux a'
+alias tmn='tmux n'
+alias tml='tmux list-sessions'
+alias tmk='tmux kill-session -t'
+
 # Filesystem aliases
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -39,6 +58,9 @@ alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 
 # File size
 alias fs="stat -f \"%z bytes\""
+
+# Mina
+alias rake="noglob rake"
 
 # Hide/show all desktop icons (useful when presenting)
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"

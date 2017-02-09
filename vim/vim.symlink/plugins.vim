@@ -14,7 +14,12 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-bundler'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'benmills/vimux'
 Plugin 'skalnik/vim-vroom'
+Plugin 'tpope/vim-dispatch'
+Plugin 'rstacruz/sparkup'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'akz92/vim-ionic2'
 
 " Plugin 'thoughtbot/vim-rspec'
 

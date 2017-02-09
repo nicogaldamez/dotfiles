@@ -10,6 +10,8 @@ set wildmenu
 
 set mouse=a
 
+set clipboard=unnamed
+
 "au InsertEnter * call InsertStatuslineColor(v:insertmode)
 au InsertLeave * hi statusline guibg=green
 
@@ -25,11 +27,13 @@ if has("gui_macvim") && has("gui_running")
 endif
 
 nnoremap <silent> <leader>T :ClearCtrlPCache<cr>\|:CtrlP<cr>
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|vendor\/assets\|tmp\/cache'
 
 " highlight conflicts
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 set relativenumber
+set dir=~/tmp
 
 " ========================================================================
 " " Ruby stuff
@@ -49,6 +53,16 @@ augroup myfiletypes
   " Make ?s part of words
   autocmd FileType ruby,eruby,yaml setlocal iskeyword+=?
 augroup END
+
+function! RubyMethodFold(line)
+  let line_is_method_or_end = synIDattr(synID(a:line,1,0), 'name') == 'rubyMethodBlock'
+  let line_is_def = getline(a:line) =~ '\s*def '
+  return line_is_method_or_end || line_is_def
+endfunction
+
+set foldexpr=RubyMethodFold(v:lnum)
+set foldmethod=expr
+set foldlevel=99
 
 " =================
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -78,6 +92,12 @@ map <Leader>sc :sp db/schema.rb<cr>
 " shortcut to save
 nmap <leader>, :w<cr>
 
+" no highlight
+nmap <leader>nh :noh<cr>
+
+" tab split
+noremap tt :tab split<CR>
+
 " shortcut to quit
 nmap <leader>q :q<cr>
 
@@ -85,6 +105,9 @@ nmap <leader>q :q<cr>
 map <leader>ev :e! ~/.vimrc<cr>
 " " edit vim plugins
 map <leader>evp :e! ~/.vim/plugins.vim<cr>
+
+" open new tab
+map <leader>t :tabedit<cr>
 
 " Textmate style indentation
 vmap <leader>[ <gv
@@ -103,8 +126,12 @@ map <silent> <C-l> :call WinMove('l')<cr>
 
 
 map <silent> <Leader>r :VroomRunTestFile<cr>
+map <silent> <Leader>r :VroomRunTestFile<cr>
 map <silent> <Leader>R :VroomRunNearestTest<cr>
 map <silent> <Leader>l :VroomRunLastTest<cr>
+
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Functions
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -148,7 +175,7 @@ map <Leader>m :call RenameFile()<cr>
 " => Plugins
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree closed by default
-let g:NERDTreeHijackNetrw=0
+let g:NERDTreeHijackNetrw=1
 " close NERDTree after a file is opened
 let g:NERDTreeQuitOnOpen=1
 " show hidden files in NERDTree
@@ -157,3 +184,6 @@ let NERDTreeShowHidden=1
 nmap <silent> <leader>k :NERDTreeToggle<cr>
 " " expand to the path of the file in the current buffer
 nmap <silent> <leader>y :NERDTreeFind<cr>
+
+let g:vroom_use_colors=1
+let g:vroom_use_dispatch=1
