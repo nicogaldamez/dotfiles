@@ -1,3 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='/Users/nicogaldamez/code/Snappler/Aero/cuentas_por_cobrar'
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/nicogaldamez/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/cocoon-1.2.11'
+let g:netrw_dirhist_2='/Users/nicogaldamez/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/cocoon-1.2.11/lib'
+let g:netrw_dirhist_3='/Users/nicogaldamez/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/cocoon-1.2.11/lib/cocoon'
+let g:netrw_dirhist_4='/Users/nicogaldamez/code/Domasoft/doma/config'
+let g:netrw_dirhist_5='/Users/nicogaldamez/code/Domasoft/doma'
+let g:netrw_dirhist_6='/Users/nicogaldamez/code/Domasoft/doma/config'

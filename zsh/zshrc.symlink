@@ -37,7 +37,7 @@ plugins=(git bundler brew git-flow fasd ruby rails rake)
 # User configuration
 
 # export PATH="/usr/local/bin:/usr/local/php5/bin::/Users/nicogaldamez/code/_libs/android-sdk/platforms:/Users/nicogaldamez/code/_libs/android-sdk/tools:/usr/local/var/rbenv/shims:/Users/nicogaldamez/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/npm/bin"
-export PATH="/usr/local/bin:/usr/local/php5/bin::/Users/nicogaldamez/code/_libs/android-sdk/platforms:/Users/nicogaldamez/code/_libs/android-sdk/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/npm/bin"
+export PATH="/usr/local/bin:/usr/local/php5/bin::/Users/nicogaldamez/Library/Android/sdk/platform-tools/:/Users/nicogaldamez/code/_libs/android-sdk/platforms:/Users/nicogaldamez/code/_libs/android-sdk/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/npm/bin"
 PATH="$HOME/.rbenv/shims:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -64,4 +64,10 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
+alias rake="noglob bundled_rake"
 
+
+export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="$(brew --prefix qt@5.5)/bin:$PATH"

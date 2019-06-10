@@ -58,11 +58,13 @@ tm_spotify="#[fg=$tm_color_music]#(osascript ~/.dotfiles/applescripts/spotify.sc
 # tm_tunes="#[fg=$tm_color_music]#(osascript ~/.dotfiles/applescripts/tunes.scpt)"
 # tm_tunes="#[fg=$tm_color_music]#(osascript ~/.dotfiles/applescripts/tunes.scpt)"
 tm_battery="#(~/.dotfiles/bin/battery_indicator.sh)"
+# tm_weather="#(~/.dotfiles/bin/tmux-weather.sh)"
 
 tm_date="#[fg=$tm_color_inactive] %R %d %b"
 tm_host="#[fg=$tm_color_feature,bold]#h"
 tm_session_name="#[fg=$tm_color_feature,bold]$tm_icon #S"
+set -g status-right '#(~/.dotfiles/bin/tmux-weather.sh)'
 
-set -g status-left $tm_session_name' '
+set -g status-left $tm_session_name' '$tm_weather
 # set -g status-right $tm_spotify' '$tm_date' '$tm_host
 set -g status-right $tm_spotify' '$tm_date' '$tm_battery

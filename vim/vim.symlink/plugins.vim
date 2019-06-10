@@ -20,8 +20,13 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'rstacruz/sparkup'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'akz92/vim-ionic2'
-
-" Plugin 'thoughtbot/vim-rspec'
+Plugin 'tpope/vim-fugitive'
+Plugin 'christoomey/vim-conflicted'
+Plugin 'mxw/vim-jsx'
+Plugin 'MaxMEllon/vim-jsx-pretty'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'mhinz/vim-grepper'
+Plugin 'thoughtbot/vim-rspec'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

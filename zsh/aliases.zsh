@@ -8,11 +8,15 @@ else # OS X `ls`
     colorflag="-G"
 fi
 
+alias readlink=greadlink
+
 # Git
 alias glod='git pull origin develop'
 alias gpod='git push origin develop'
 alias glom='git pull origin master'
 alias gpom='git push origin master'
+alias glos='git pull origin staging'
+alias gpos='git push origin staging'
 
 # Git flow
 alias gffs='git flow feature start'
@@ -100,5 +104,9 @@ alias lupacan='cd ~/code/Snappler/Lupacan/lupacan'
 alias imaginan='cd ~/code/Imaginan/imaginan'
 alias codedir='cd ~/code/'
 
+# Rails
 alias precompile='RAILS_ENV=production bundle exec rake assets:precompile'
+alias rdbm='bundle exec rake db:migrate'
+
+
 

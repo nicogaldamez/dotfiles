@@ -10,6 +10,8 @@ set wildmenu
 
 set mouse=a
 
+let g:gitgutter_max_signs=9999
+
 set clipboard=unnamed
 
 "au InsertEnter * call InsertStatuslineColor(v:insertmode)
@@ -64,6 +66,8 @@ set foldexpr=RubyMethodFold(v:lnum)
 set foldmethod=expr
 set foldlevel=99
 
+map <Leader>by :g/byebug\\|binding\\|debugger/d<cr>
+
 " =================
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Mappings
@@ -85,6 +89,7 @@ nmap ga <Plug>(EasyAlign)
 xmap ga <Plug>(EasyAlign)
 
 map <Leader>ac :sp app/controllers/application_controller.rb<cr>
+map <Leader>st :tabedit config/initializers/settings.rb<cr>
 map <Leader>bb :!bundle install<cr>
 map <Leader>gl :e Gemfile.lock<cr>
 map <Leader>sc :sp db/schema.rb<cr>
@@ -93,7 +98,7 @@ map <Leader>sc :sp db/schema.rb<cr>
 nmap <leader>, :w<cr>
 
 " no highlight
-nmap <leader>nh :noh<cr>
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 " tab split
 noremap tt :tab split<CR>
@@ -126,9 +131,15 @@ map <silent> <C-l> :call WinMove('l')<cr>
 
 
 map <silent> <Leader>r :VroomRunTestFile<cr>
-map <silent> <Leader>r :VroomRunTestFile<cr>
-map <silent> <Leader>R :VroomRunNearestTest<cr>
+map <silent> <Leader>R :call vroom#RunNearestTest({'runner': 'm'})<cr>
 map <silent> <Leader>l :VroomRunLastTest<cr>
+
+" map <Leader>t :call RunCurrentSpecFile()<CR>
+" map <Leader>s :call RunNearestSpec()<CR>
+" map <Leader>l :call RunLastSpec()<CR>
+" map <Leader>a :call RunAllSpecs()<CR>
+
+map <leader>i mmgg=G`m<CR> " Indent all
 
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
@@ -143,8 +154,8 @@ set ruler " show the cursor position all the time
 " Window movement shortcuts
 " " move to the window in the direction shown, or create a new window
 function! WinMove(key)
-  let t:curwin = winnr()
-  exec "wincmd ".a:key
+let t:curwin = winnr()
+exec "wincmd ".a:key
   if (t:curwin == winnr())
     if (match(a:key,'[jk]'))
       wincmd v
@@ -174,16 +185,14 @@ map <Leader>m :call RenameFile()<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" NERDTree closed by default
-let g:NERDTreeHijackNetrw=1
-" close NERDTree after a file is opened
-let g:NERDTreeQuitOnOpen=1
-" show hidden files in NERDTree
-let NERDTreeShowHidden=1
+let g:NERDTreeHijackNetrw=0 " NERDTree closed by default
+let g:NERDTreeQuitOnOpen=1 " close NERDTree after a file is opened
+let NERDTreeShowHidden=1 " show hidden files in NERDTree
 " Toggle NERDTree
 nmap <silent> <leader>k :NERDTreeToggle<cr>
 " " expand to the path of the file in the current buffer
 nmap <silent> <leader>y :NERDTreeFind<cr>
 
 let g:vroom_use_colors=1
-let g:vroom_use_dispatch=1
+let g:vroom_use_dispatch=0
+
