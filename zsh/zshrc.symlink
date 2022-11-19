@@ -25,7 +25,7 @@ ZSH_THEME="robbyrussell"
 
 # for config ($ZSH/*completion.sh) source $config
 
-export EDITOR='vim'
+export EDITOR='nvim'
 
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
@@ -65,9 +65,23 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 alias rake="noglob bundled_rake"
+# Corre todos los specs que hayan sido modificados por mi rama (excluye los eliminados)
+alias changed_specs="git diff --diff-filter=d --name-only main... | grep _spec | xargs -n1 bundle exec rspec"
+# Corre rubocop en los archivos que se modificaron en mi rama (excluye los eliminados)
+alias rubocop_on_changed="git diff --diff-filter=d --name-only main... | xargs bundle exec rubocop"
+# Corre rubocop sobre los cambios hechos antes de commitear
+alias rubocop_pre="git ls-files -m | xargs ls -1 2>/dev/null | grep '\.rb$' | xargs bundle exec rubocop"
 
+# Changes git language
+export LC_ALL=en_US.UTF-8
+
+source "/usr/local/etc/profile.d/z.sh"
 
 export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
+export PATH="/usr/local/opt/qt@5.5/bin/:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

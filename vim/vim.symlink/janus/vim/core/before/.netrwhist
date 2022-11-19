@@ -1,8 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/Users/nicogaldamez/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/cocoon-1.2.11'
-let g:netrw_dirhist_2='/Users/nicogaldamez/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/cocoon-1.2.11/lib'
-let g:netrw_dirhist_3='/Users/nicogaldamez/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/cocoon-1.2.11/lib/cocoon'
-let g:netrw_dirhist_4='/Users/nicogaldamez/code/Domasoft/doma/config'
-let g:netrw_dirhist_5='/Users/nicogaldamez/code/Domasoft/doma'
-let g:netrw_dirhist_6='/Users/nicogaldamez/code/Domasoft/doma/config'
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/Users/nicogaldamez/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/delayed-0.4.0'
+let g:netrw_dirhist_3='/Users/nicogaldamez/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/capistrano-3.11.0'
+let g:netrw_dirhist_2='/Users/nicogaldamez/code/Aukot/aukot-control/docker'
+let g:netrw_dirhist_1='/Users/nicogaldamez/code/FacturaElectronica/afip-invoices/docker'

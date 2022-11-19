@@ -3,13 +3,13 @@ set nocompatible
 " load plugins for vundle
 source ~/.vim/plugins.vim
 
-set t_Co=256
-set background=dark
-colorscheme Tomorrow-Night
-highlight Normal ctermbg=NONE
-highlight nonText ctermbg=NONE
+" set t_Co=256
+" set background=dark
+colorscheme github_dark
+" highlight Normal ctermbg=NONE
+" highlight nonText ctermbg=NONE
 
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 
 ""
@@ -60,3 +60,6 @@ call janus#load_pathogen()
 if filereadable(expand("~/.vimrc.after"))
   source ~/.vimrc.after
 endif
+
+
+augroup filetype javascript syntax=javascript

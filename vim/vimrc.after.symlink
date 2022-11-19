@@ -34,7 +34,6 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|vendor\/assets\|tmp\/c
 " highlight conflicts
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
-set relativenumber
 set dir=~/tmp
 
 " ========================================================================
@@ -143,6 +142,16 @@ map <leader>i mmgg=G`m<CR> " Indent all
 
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+
+" VimTest
+let test#strategy = "vimterminal"
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Functions
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
