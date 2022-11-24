@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/Users/nicogaldamez/.dotfiles/vim'
+let g:netrw_dirhist_6='/Users/nicogaldamez/.dotfiles/vim/vim.symlink'
+let g:netrw_dirhist_5='/Users/nicogaldamez/.vim'
 let g:netrw_dirhist_4='/Users/nicogaldamez/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/delayed-0.4.0'
 let g:netrw_dirhist_3='/Users/nicogaldamez/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/capistrano-3.11.0'
 let g:netrw_dirhist_2='/Users/nicogaldamez/code/Aukot/aukot-control/docker'

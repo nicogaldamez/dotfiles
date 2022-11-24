@@ -3,11 +3,10 @@ set nocompatible
 " load plugins for vundle
 source ~/.vim/plugins.vim
 
-" set t_Co=256
-" set background=dark
-colorscheme github_dark
-" highlight Normal ctermbg=NONE
-" highlight nonText ctermbg=NONE
+colorscheme gruvbox
+set t_Co=256
+highlight Normal ctermbg=NONE
+highlight nonText ctermbg=NONE
 
 set clipboard=unnamedplus
 

@@ -46,8 +46,6 @@ if [[ -d /usr/local/sbin ]]; then
   export PATH=/usr/local/sbin:$PATH
 fi
 
-# source ~/.bin/tmuxinator.zsh
-
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
@@ -75,13 +73,14 @@ alias rubocop_pre="git ls-files -m | xargs ls -1 2>/dev/null | grep '\.rb$' | xa
 # Changes git language
 export LC_ALL=en_US.UTF-8
 
-source "/usr/local/etc/profile.d/z.sh"
+# source "/usr/local/etc/profile.d/z.sh"
+source "/opt/homebrew/Cellar/z/1.9/etc/profile.d/z.sh"
 
-export NVM_DIR="$HOME/.nvm"
+# export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export PATH="/usr/local/opt/qt@5.5/bin/:$PATH"
+# export PATH="/usr/local/opt/qt@5.5/bin/:$PATH"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
